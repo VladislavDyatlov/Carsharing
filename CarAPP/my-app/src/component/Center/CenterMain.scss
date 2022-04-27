@@ -1,0 +1,12 @@
+.centermain {
+    min-width: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex: 1 1;
+    grid-area: centermain;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: auto;
+  }
+  
