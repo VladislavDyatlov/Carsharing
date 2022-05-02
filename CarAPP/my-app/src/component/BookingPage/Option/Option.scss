@@ -1,0 +1,136 @@
+.options-addons {
+    &__heading {
+      display: block;
+      margin-bottom: 16px;
+    }
+    &__item {
+      display: flex;
+      align-items: center; 
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+    &__input:checked,
+    &__input:not(:checked) {
+      position: absolute;
+      left: -100%;
+    }
+    label {
+      display: flex;
+      position: relative;
+      align-items: center;
+      line-height: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      color: grey;
+      font-weight: 300;
+      transition: 0.2s all;
+    }
+    label::before {
+      content: "";
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      border: 1px solid grey;
+      background-color: transparent;
+    }
+    label.active {
+      color: black;
+    }
+    label.active::before {
+      border: 1px solid black;
+    }
+    label::after {
+      content: "";
+      position: absolute;
+      transition: 0.2s all;
+      left: 2px;
+      top: 5px;
+      width: 12px;
+      height: 6px;
+      opacity: 0;
+      border-left: 0px solid grey;
+      border-bottom: 0px solid grey;
+      transform: rotate(-45deg);
+    }
+    label.active::after {
+      opacity: 1;
+      border-left: 3px solid black;
+      border-bottom: 3px solid black;
+    }
+  }
+
+  .options-date-rent {
+    margin-bottom: 32px;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: max-content;
+    }
+    &__heading {
+      margin-bottom: 16px;
+    }
+    &__input {
+      font-size: 14px;
+      font-family: Roboto;
+      font-weight: 300;
+    }
+    &__input::-webkit-calendar-picker-indicator {
+      display: none;
+    } 
+  }
+
+  .options-color {
+    margin-bottom: 32px;
+    &__heading {
+      display: block;
+      margin-bottom: 16px;
+    }
+    &__list {
+      display: flex;
+    }
+    &__item {
+      color: grey;
+    } 
+  }
+
+  .options-rate{
+    margin-bottom: 32px;
+    &__heading{
+        margin-bottom: 16px;
+        display: block; 
+    }
+    &__item{
+        color: grey;
+        margin-bottom: 8px;
+    }
+}
+
+@media(min-width: 1024px){
+    .options-rate{
+        &__item{
+            font-size: 14px;
+        }
+    }
+}
+  
+  @media(min-width: 1024px){
+    .options-color{
+      &__item{
+        font-size: 14px;
+      }
+    }
+  }
+
+  
+  @media (min-width: 768px) {
+    .options-addons {
+      label {
+        font-size: 14px;
+      }
+    }
+  }

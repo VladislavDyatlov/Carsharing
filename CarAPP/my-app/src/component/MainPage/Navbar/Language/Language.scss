@@ -1,0 +1,40 @@
+.language {
+    width: 47px;
+    height: 47px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s all;
+    &:hover {
+      color: rgb(26, 192, 26);
+      transition: 0.2s all;
+    }
+  
+    &:active {
+      .language__a { 
+        color: rgb(68, 168, 68);
+        transition: 0.2s all;
+      }
+    }
+    &__a {
+      color: rgb(71, 168, 71);
+      text-decoration: none;
+      transition: 0.2s all;
+    }
+    &--navigation {
+      margin: 28px;
+    }
+  } 
+  
+  //*------------------------------------
+  
+  @media (min-width: 768px) {
+    .language {
+      &--navigation {
+        display: none;
+      }
+    }
+  }
+  

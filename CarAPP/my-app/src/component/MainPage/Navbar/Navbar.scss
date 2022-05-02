@@ -1,0 +1,30 @@
+.index {
+    display: none;
+  }
+  .index-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 93%;
+    padding: 30px 23px 23px 23px;
+  }
+   
+  //*--------------------------------------
+
+  
+
+
+  @media(min-width: 768px){
+    .index {
+      display: block;
+      max-height: 100vh;
+      background-color: black;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 93%;
+      width: 5%
+    }
+  }
+  
