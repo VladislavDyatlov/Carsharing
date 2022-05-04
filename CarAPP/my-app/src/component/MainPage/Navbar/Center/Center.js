@@ -8,7 +8,7 @@ const MenuInformation = [
     'БЕНЗИН',
     'ОБСЛУЖИВАНИЕ'
 ]
-
+ 
 function Center({active, setActive}){
     return(
     <nav className={active ? "navigation active" : "navigation" }>

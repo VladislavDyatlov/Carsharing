@@ -2,6 +2,7 @@
     &__container{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
     &__order{
         display: none;
@@ -35,6 +36,13 @@
             font-weight: 700;
         }
     }
+
+    &__img{
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
     &__date{
         font-size: 14px;
         font-weight: 300;

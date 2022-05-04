@@ -1,8 +1,18 @@
+.Options{
+  margin-top: 35px;
+}
+
 .options-addons {
     &__heading {
       display: block;
       margin-bottom: 16px;
+      margin: 0;
     }
+
+    &__list{
+      padding: 0;
+    }
+
     &__item {
       display: flex;
       align-items: center; 
@@ -75,9 +85,13 @@
       margin-bottom: 16px;
     }
     &__input {
-      font-size: 14px;
-      font-family: Roboto;
-      font-weight: 300;
+      outline: none;
+      min-width: 180px;
+      width: 60%;
+      border: 0;
+      border-bottom: 1px solid #999999;
+      margin-left: 8px;
+      padding-right: 0px; 
     }
     &__input::-webkit-calendar-picker-indicator {
       display: none;
@@ -85,16 +99,29 @@
   }
 
   .options-color {
-    margin-bottom: 32px;
+    margin-top: 30px;
+    margin-bottom: 26px;
+    cursor: pointer; 
     &__heading {
       display: block;
       margin-bottom: 16px;
     }
     &__list {
       display: flex;
+      padding: 0;
     }
     &__item {
-      color: grey;
+      margin: 0;
+      li::marker {
+        font-size: 5rem;
+      }
+      font-size: 17px;
+      color: rgb(2, 2, 2);
+      margin-left: 22px;
+      &:hover{
+        color: rgb(28, 106, 28);
+        transition: 1s;
+      }
     } 
   }
 
@@ -102,11 +129,22 @@
     margin-bottom: 32px;
     &__heading{
         margin-bottom: 16px;
-        display: block; 
+        display: block;
+        padding: 0;  
     }
+
+    &__list{
+      padding:0;
+    }
+
     &__item{
-        color: grey;
-        margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 17px;
+      color: rgb(2, 2, 2);
+      &:hover{
+        color: rgb(28, 106, 28);
+        transition: 1s;
+      }
     }
 }
 

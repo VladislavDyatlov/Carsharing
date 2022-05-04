@@ -10,6 +10,7 @@ import {
 import Car from './Car/Car';
 import Option from './Option/Option';
 import Order from './Order/Order';
+import Container from './Container/Container';
 
 function Booking(){
     return (
@@ -22,7 +23,8 @@ function Booking(){
             <Route path="car" element={<Car />} />
             <Route path="option" element={<Option />} />
             <Route path="order" element={<Order />} />  
-            </Routes>       
+            </Routes> 
+            <Container />      
             </div>
         </div>
     );

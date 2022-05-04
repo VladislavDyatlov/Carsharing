@@ -2,12 +2,12 @@ import React from "react";
 import './Option.scss';
 
 function Option(){
-    return(
+    return( 
         <div>
         <section className="options-color">
         <div className="options-color__container">
           <span className="options-color__heading">Цвет</span>
-          <ul className="options-color__list">
+          <ul type="circle" className="options-color__list">
             <li className="options-color__item">Любой</li>
             <li className="options-color__item">Красный</li>
             <li className="options-color__item">Голубой</li>
@@ -19,18 +19,18 @@ function Option(){
         <span className="options-date-rent__heading">Дата аренды</span>
         <div className="options-date-rent__form">
           <span>С</span>
-          <input type="date" className="options-date-rent__input " />
+          <input type="search" className="options-date-rent__input " />
         </div>
         <div className="options-date-rent__form">
           <span>По</span>
-          <input type="date" className="options-date-rent__input" value=' '/>
+          <input type="search" className="options-date-rent__input" placeholder="Введите дату и время"/>
         </div>
       </div>
     </section>
     <section className="options-rate">
       <div className="options-rate__container">
         <span className="options-rate__heading">Тариф</span>
-        <ul className="options-rate__list">
+        <ul type="circle" className="options-rate__list">
           <li className="options-rate__item">Поминутно, 7 ₽/сутки</li>
           <li className="options-rate__item">На сутки, 1999 ₽/сутки</li>
         </ul>

@@ -34,7 +34,7 @@
       margin-right: 5px;
       text-decoration: none;
       color: rgb(21, 151, 80);
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 700;
       &.active {
         color: rgb(24, 223, 164);
@@ -45,7 +45,7 @@
   @media (min-width: 1024px) {
     .state-li {
       &__link {
-        font-size: 12px;
+        font-size: 30px;
       }
     }
   }

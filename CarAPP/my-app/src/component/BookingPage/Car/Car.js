@@ -70,18 +70,21 @@ const CarModel = {
         car: 'Hyndai',
         model: "SONATA",
         pay: "10 000 - 32 000 ₽",
-        img: sonata,
+        img: sonata, 
       },
     ],
   };
 
 function Car(){
     return( 
+      <div>
+      <ul type="circle" className="models-filter">
+      <li className="models-filter__item">Все модели</li>
+      <li className="models-filter__item">Эконом</li>
+      <li className="models-filter__item">Премиум</li>
+    </ul>        
         <div className="cars">
         <div className="car-choosie">
-        <p className="car-choosie__item">Все модели</p>
-        <p className="car-choosie__item">Эконом</p>
-        <p className="car-choosie__item">Премиум</p>
       </div>
         {CarModel.cars.map((car) =>(
         <div>
@@ -94,6 +97,7 @@ function Car(){
           </li>                        
         </div>    
         ))}
+        </div>
         </div>
     )
 }
