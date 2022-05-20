@@ -9,24 +9,26 @@ import {
   } from 'react-router-dom';
 import Car from './Car/Car';
 import Option from './Option/Option';
-import Order from './Order/Order';
-import Container from './Container/Container';
+import Order from "./Order/Order";
+import { Bookings } from './booking/Bookings';
 
 function Booking(){
     return (
-        <div className="booking">
+        <>
+        <div className="booking">               
             <Header />
             <Navigation />
-            <div className="booking__navigation"> 
+            <div className="booking__navigation">  
             <Routes>
             <Route index path="location" element={<Location />} />
             <Route path="car" element={<Car />} />
             <Route path="option" element={<Option />} />
-            <Route path="order" element={<Order />} />  
-            </Routes> 
-            <Container />      
+            <Route path="order" element={<Order />} /> 
+            <Route path="bookings" element={<Bookings />} />  
+            </Routes>      
             </div>
         </div>
+        </>
     );
 }
 

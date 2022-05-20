@@ -1,12 +1,14 @@
 import React from "react";
 import './Language.scss'
 
-function Language({className}){
-    return(
-        <div className={className}>
-            <a href="#" className="language__a">Eng</a>
-        </div>
-    );
+function Language({ className, eng, Eng}) {
+  return (
+    <div className={className}>
+      <a href="#" onClick={Eng} className="language__a">
+        {eng ? "Рус" : "Eng"}
+      </a>
+    </div> 
+  );
 }  
  
-export default Language;
+export default Language; 

@@ -1,27 +1,12 @@
-.myapps {
-  display: grid;
-  grid-template-areas: "aside main";
-  grid-template-rows: 1fr;
-  grid-template-columns: 0px 1fr;
-  min-height: 100vh;
-}
-
-
 @media (min-width: 768px) {
-  .myapps {
+  .myapp {
     grid-template-columns: 85px 1fr;
   }
 }
 
-
-@media (min-width: 1024px) {
-  .my-apps {
-    grid-template-columns: 65px 1fr;
-    max-height: 100vh;
-    overflow: hidden;
-  }
+::-webkit-scrollbar {
+  width: 0;
 }
-
 
 .App-logo {
   height: 40vmin;

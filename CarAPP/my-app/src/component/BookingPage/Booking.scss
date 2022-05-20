@@ -11,7 +11,11 @@
   
   @media (min-width: 1024px) {
     .booking {
+      display: flex;
       max-height: 100vh;
+      margin: 0;
+      padding: 0;
+      position: relative;
       &__navigation {
         display: flex;
         flex-direction: row;

@@ -1,9 +1,12 @@
 .container {
   border-left: 1px solid rgba(128, 128, 128, 0.4);
+  height: 85vh;
+  flex: left;
+  float: left;
     &__block {
       margin-bottom: 55px;
     }
-    &__mains {
+    &__mains { 
       padding: 25px 16px 0 16px;
     }
     &__title {
@@ -11,6 +14,30 @@
       font-weight: 500;
       text-align: right;
       margin-bottom: 25px;
+    }
+        &__buttons {
+      margin: 0 auto;
+      width: 100%;
+      height: 48px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, rgb(177, 36, 28), #7b0404); 
+      border-radius: 10px;
+      font-size: 18px; 
+      transition: 1s;
+      &:hover {
+        opacity: 0.8;
+        transition: 1s;
+      }
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+      &:active {
+        background: green;
+      }
     }
     &__button {
       margin: 0 auto;
@@ -20,15 +47,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgba(53, 193, 53, 0.859);
+      background: rgba(53, 193, 53, 0.859); 
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 18px; 
+      transition: 1s;
       &:hover {
         background: rgba(14, 255, 30, 0.642);
         transition: 1s;
       }
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
       &:active {
         background: green;
+      }
+      &.state {
+        background-color: #999;
+        &:not(:last-child)::after {
+          border: 3px solid transparent; 
+          border-left: 4px solid grey;
+        }
+    
+        pointer-events: none;
+        & .state {
+          color: grey;
+        }
       }
     }
     &__booking {
@@ -62,15 +106,31 @@
     }
     &__price {
       margin-bottom: 55px;
-      p {
-        font-size: 14px;
+      .total {
+        font-size: 17px;
+        font-weight:500;
       }
-      p:nth-child(1) {
-        font-weight: 500;
-      }
-      p:nth-child(2) {
-        font-weight: 300;
-      }
+      .ingredients {
+        padding: 0; 
+        margin-bottom: 25px;
+       }
+       .ingredients li {
+        align-items: baseline;
+        display: flex; 
+        margin-bottom: 0.5em; 
+       }
+       .ingredients li::before {
+        content: '';
+        border-bottom: 1px dashed #ccc; 
+        flex-grow: 1; 
+        order: 2; 
+        margin: 0 5px; 
+       }
+       .ingredients .value {
+        color: rgb(181, 181, 181);
+        order: 3;
+        font-weight: 100;
+       }
     }
   }
   

@@ -5,19 +5,25 @@ import { Menu } from "./Menu/Menu";
 import './Navbar.scss'
 
 
-function Navbar(){ 
+function Navbar({hide, setHide, eng, Eng}){ 
 
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(false); 
  
-    return(
-        <div className="index">
-            <div className="index-two">
-                <Menu className="burger-menu burger-menu--active" active={active} setActive={setActive} />
-                <Center active={active} setActive={setActive} />  
-                <Language className="language" /> 
-            </div>
+    return (
+      <div className="index">
+        <div className="index-two">
+          <Menu
+            className="burger-menu burger-menu--active"
+            hide={hide}
+            setHide={setHide}
+            active={active}
+            setActive={setActive}
+          />
+          <Center eng={eng} Eng={Eng} active={active} setActive={setActive} />
+          <Language className="language" eng={eng} Eng={Eng} />
         </div>
-    );
+      </div>
+    );  
 } 
 
 export default Navbar;

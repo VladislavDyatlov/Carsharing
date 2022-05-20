@@ -1,7 +1,9 @@
 .navigations {
     margin-top: 25px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid rgba(128, 128, 128, 0.53);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.518);
+    flex: left;
+    float: left;
     &__container {
       padding: 4px 16px 4px 16px;
       display: flex;

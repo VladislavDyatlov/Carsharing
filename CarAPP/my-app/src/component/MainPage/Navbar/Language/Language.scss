@@ -8,8 +8,9 @@
     align-items: center;
     transition: 0.2s all;
     &:hover {
-      color: rgb(26, 192, 26);
-      transition: 0.2s all;
+      border: 1px solid rgb(88, 117, 88);
+      color: rgb(34, 225, 34);
+      transition: 0.5s all;
     }
   
     &:active {

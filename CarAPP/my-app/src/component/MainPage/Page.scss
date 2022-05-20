@@ -1,5 +1,18 @@
+.page{
+   display: flex;
+   overflow: hidden;
+}
+
 @media(min-width:1024px){
     .page{
      display: flex;
+     overflow: hidden;
+    }
+ }
+
+ @media(min-width:756px){
+    .page{
+     display: flex;
+     overflow: hidden;
     }
  }

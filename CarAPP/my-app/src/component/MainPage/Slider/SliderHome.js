@@ -1,67 +1,60 @@
 import React, {useState} from "react";
-import slide0 from "../../../images/slider-1.jpg";
-import slide1 from "../../../images/slider-2.jpg";
-import slide2 from "../../../images/slider-3.jpg";
-import slide3 from "../../../images/slider-4.jpg";
 import './SliderHome.scss'
 import Slideres from './Sliders/Slider'
 import Circle from './circle/circle'
 
 const SliderInfo = {
   SliderText: [
-    { 
-      img: slide0,
+    {
+      img: "https://ia.wampi.ru/2022/05/19/slider-1.jpg",
       text: "Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.",
       title: "Бесплатная парковка",
       button: "linear-gradient(to right, #13493F, #0C7B1B)",
-      id: 0,
-    },
-    {
-      img: slide1,
-      text: "Полная страховка страховка автомобиля",
-      title: "Страховка",
-      button: "linear-gradient(to right, #132949, #0C7B67)",
       id: 1,
     },
     {
-      img: slide2,
-      text: "Полный бак на любой заправке города за наш счёт",
-      title: "Бензин",
-      button: "linear-gradient(to right, #493013, #7B0C3B)",
+      img: "https://ie.wampi.ru/2022/05/19/slider-2.jpg",
+      text: "Полная страховка страховка автомобиля",
+      title: "Страховка",
+      button: "linear-gradient(to right, #132949, #0C7B67)",
       id: 2,
     },
     {
-      img: slide3,
+      img: "https://ie.wampi.ru/2022/05/19/slider-3.jpg",
+      text: "Полный бак на любой заправке города за наш счёт",
+      title: "Бензин",
+      button: "linear-gradient(to right, #493013, #7B0C3B)",
+      id: 3,
+    },
+    {
+      img: "https://ia.wampi.ru/2022/05/19/slider-4.jpg",
       text: "Автомобиль проходит еженедельное TO",
       title: "Обслуживание",
       button: "linear-gradient(to right, #281349, #720C7B)",
-      id: 3,
+      id: 4,
     },
   ],
 };
  
 
-function SliderHome() {
+function SliderHome({hide}) {
 
-  const [hide, setHide] = useState(false);
-  const [slideNum, setSlideNum] = useState(0)
-
-
+  const [slideNum, setSlideNum] = useState(1)
 
   const NextSlide = () =>{
     if( slideNum !== SliderInfo.SliderText.length){
       setSlideNum(slideNum + 1) 
     } 
     if(slideNum === SliderInfo.SliderText.length){
-      setSlideNum(0)
+      setSlideNum(1)
     }
   }
   
-  const PrevSlide = () =>{
-    if(slideNum !== 0){
+  const PrevSlide = () =>{ 
+    if(slideNum !== 1){
       setSlideNum(slideNum - 1)
     }
-     if(slideNum === 0){
+     if(slideNum === 1){
       setSlideNum(SliderInfo.SliderText.length) 
     }
   }
@@ -83,7 +76,7 @@ function SliderHome() {
             key={info.id}
             button={info.button}
             hide={hide}
-            NextSlide={NextSlide}
+            NextSlide={NextSlide} 
             PrevSlide={PrevSlide}
           />
         );
@@ -91,6 +84,7 @@ function SliderHome() {
       <Circle 
         SliderInfo={SliderInfo.SliderText}
         value={slideNum} 
+        setSlideNum={setSlideNum}
         />
     </div>
   );

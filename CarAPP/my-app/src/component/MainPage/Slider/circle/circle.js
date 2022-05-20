@@ -1,25 +1,25 @@
 import React from "react";
 import './circle.scss'
 
-function circle({SliderInfo, value}){
+function circle({SliderInfo, value, setSlideNum}){
 
-    const circlebutton = (id) =>{
-        return id
-    }
+  const MovieCircle = index =>{
+    setSlideNum(index);
+  }
 
     return(
         <div className="circle">
         {SliderInfo?.map(el => {
-          return ( 
+          return (
             <span
               id={`circle-${el.id}`}
               key={el.id}
               className={value === el.id ? "active" : ""}
-              onClick={() => circlebutton(el.id)}
+              onClick={() => MovieCircle(el.id)}
             />
-          );
+          ); 
         })}
-      </div>
+      </div>  
     )
 }
 

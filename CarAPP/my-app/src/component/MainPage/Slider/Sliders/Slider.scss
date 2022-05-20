@@ -37,7 +37,7 @@
     z-index: 3;
     &::before {
       content: "";
-      display: block;
+      display: block; 
       position: absolute;
       width: 100%;
       height: 100%;
@@ -83,6 +83,17 @@
     color: #fff;
     font-size: 18px;
     line-height: 21px;
+    transition: 1s;
+    &:hover{
+      box-shadow:
+      1px 1px #4c565fc3,
+      2px 2px #293844ac,
+      3px 3px #313e498a;
+      -webkit-transform: translateX(-5px);
+      transform: translateX(-5px);
+      opacity: 0.8;
+      transition: 1s;
+    }
   }
   &__arrow {
     display: flex;
@@ -93,6 +104,9 @@
     cursor: pointer;
     position: relative;
     transition: 0.2s all;
+    &--left{
+      transform: rotate(180deg);
+    }
     &:hover {
       background-color: rgba(14, 194, 97, 0.2);
     }
