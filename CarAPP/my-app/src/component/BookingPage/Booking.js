@@ -14,21 +14,21 @@ import { Bookings } from './booking/Bookings';
 
 function Booking(){
     return (
-        <>
-        <div className="booking">               
-            <Header />
-            <Navigation />
-            <div className="booking__navigation">  
+      <>
+        <div className="booking">
+          <Header />
+          <Navigation />
+          <div className="booking__navigation">
             <Routes>
-            <Route index path="location" element={<Location />} />
-            <Route path="car" element={<Car />} />
-            <Route path="option" element={<Option />} />
-            <Route path="order" element={<Order />} /> 
-            <Route path="bookings" element={<Bookings />} />  
-            </Routes>      
-            </div>
+              <Route index path="location" element={<Location />} />
+              <Route path="car" element={<Car />} />
+              <Route path="option" element={<Option />} />
+              <Route path="order" element={<Order />} />
+              <Route path="bookings" element={<Bookings />} />
+            </Routes>
+          </div>
         </div>
-        </>
+      </>
     );
 }
 

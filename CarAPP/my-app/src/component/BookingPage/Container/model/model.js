@@ -8,12 +8,12 @@ export default function({model, setModel}){
 
     const dispath = useDispatch();
 
-    const Bookings = () =>{
-        dispath(setItemInBooking(true))
-      } 
+    const Bookings = () => {
+      dispath(setItemInBooking(true));
+    }; 
 
     return (
-        <div className={model ? "model active" : "model"} >
+        <div className={model ? "model active" : "model"} onClick={() => setModel(false)}>
             <div className="model__content" onClick={(e) => e.stopPropagation()}>
                 <p className="model__text">Подтвердить заказ</p>
                 <div className="model__button">

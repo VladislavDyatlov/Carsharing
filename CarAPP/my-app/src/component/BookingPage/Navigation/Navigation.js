@@ -4,23 +4,24 @@ import './Navigation.scss';
 import { useSelector } from "react-redux";
 import Navigate from './Navigate/Navigate'
 
-export default function Navigation({state}) {
+export default function Navigation() {
 
-  const nav = useSelector(nav => nav.disable.itemsInDisable)
-  const navs = useSelector(nav => nav.disable.itemsInDisables)
+  const nav = useSelector(nav => nav.navigate.itemsInNavigate)
+  const navs = useSelector(nav => nav.navigate.itemsInNavigates)
+  const navigate = useSelector(nav => nav.navigate.itemsInNavigat)
   const booking = useSelector(nav => nav.booking.itemsInBooking)
 
   const Navigations = [
     {
-      id: 0,
+      id: 0, 
       text: "Местоположение",
       state: true,
       path: "location",
-    },
+    }, 
     {
       id: 1, 
       text: "Модель",
-      state: true,
+      state: navigate,
       path: "car",
     },
     {
@@ -37,12 +38,14 @@ export default function Navigation({state}) {
     },
 ];
 
+const number = Math.floor(Math.random() * 34848328)
+
     return(
         <div className="navigations">
             <div className="navigations__container">
               { booking
               ?
-                <strong>Заказ номер RU58491823</strong>
+                <strong>Заказ номер RU{number}</strong>
               :
                 <Navigate Navigations={Navigations} />
               }  

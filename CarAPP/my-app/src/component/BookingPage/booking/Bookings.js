@@ -6,6 +6,7 @@ import {useSelector} from 'react-redux'
 export function Bookings(){
 
     const items = useSelector((state) => state.cart.itemsInCart);
+    const item = useSelector((state) => state.option.ItemsInDate);
     const disable = true
     const button = true
 
@@ -13,24 +14,28 @@ export function Bookings(){
       <>
         <div className="total-main">
           <div className="total-main__two">
-            <section className="total-info">
-              <div className="total-info__container">
-                <h2>Ваш заказ подтвержден</h2>
-                <span className="total-info__model">
-                  {items.map((car) => car.car)},{items.map((car) => car.model)}
-                </span>
-                <div className="total-info__number">
-                  <span>К 761 НА 73</span>
-                </div>
-                <p className="total-info__fuel">
-                  <span>Топливо </span>100%
-                </p>
-                <p className="total-info__date">
-                  <span>Доступна с </span>12.06.2019 12:00
-                </p>
-              </div>
-            </section>
-            <img src={items.map((cart) => cart.img)} />
+            {items && (
+              <>
+                <section className="total-info">
+                <p className="total-info__booking">Ваш заказ подтвержден</p>
+                  <div className="total-info__container">
+                    <span className="total-info__model">
+                      {items.car},{items.model}
+                    </span>
+                    <div className="total-info__number">
+                      <span>{items.nubmer}</span>
+                    </div>
+                    <p className="total-info__fuel">
+                      <span>Топливо </span>100%
+                    </p>
+                    <p className="total-info__date">
+                      <span>Доступна с </span>{item}
+                    </p>
+                  </div>
+                </section>
+                <img src={items.img} width="256px" height="116px" />
+              </>
+            )}
           </div>
         </div>
         <Container

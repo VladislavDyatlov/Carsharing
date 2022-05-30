@@ -4,12 +4,26 @@ import "./Container.scss";
 import {useSelector} from 'react-redux'
 import Model from './model/model'
 
- const Container = ({path, text, active, actives, activ, disable, button}) => {
+ const Container = ({path, text, disable, button}) => {
  
   const items = useSelector((state) => state.cart.itemsInCart);
 
   const item = useSelector(state => state.option.IntemsInOption)
+  const pice = useSelector(state => state.option.IntemsInOptions)
+  const active = useSelector(state => state.option.IntemsInChoice)
+  const actives = useSelector(state => state.option.IntemsInChoices) 
+  const activ = useSelector(state => state.option.IntemsInChoic)
+  const location = useSelector(state => state.location.itemsInLocation)
+  const locations = useSelector(state => state.location.itemsInLocations)
+  const date = new Date(useSelector((state) => state.option.ItemsInDate));
+  const dates = new Date(useSelector((state) => state.option.ItemsInDates));
   const [model, setModel] = useState(false)
+
+  const TotalDay = (dates - date) / (60 * 60 * 24 * 1000)
+  const TotalPay = pice.price * TotalDay 
+  const TotalOne = active ? active.text : 0
+  const TotalTwo = actives ? actives.text : 0
+  const TotalThree = activ ? activ.text : 0;
 
   const ModelActive = () =>{
     if (path === "/booking/order") {
@@ -24,53 +38,63 @@ import Model from './model/model'
         <div className="container__title">Ваш заказ:</div>
         <div className="container__booking">
           <p>Пункт выдачи</p>
-          <p></p>
-          <p>Ульяновск, Нариманова 42</p>
+          <p className="container__p"></p>
+          <p>
+            {locations} {location}
+          </p>
         </div>
         <div className="container__price">
           <div>
             <ul class="ingredients">
-              {items.length > 0 ? (
+              {items && (
                 <div>
                   <li>
                     Модель
                     <span class="value">
-                      {items.map((car) => car.car)},{" "}
-                      {items.map((car) => car.model)}
+                      {items.car}, {items.model}
                     </span>
                   </li>
+                </div>
+              )}
+              {item && (
+                <div>
                   <li>
-                    Длительность аренды<span class="value">1д.2ч</span>
+                    Длительность аренды
+                    <span class="value">{TotalDay ? TotalDay : 0}д</span>
                   </li>
                   <li>
                     Цвет
-                    <span class="value">{item.map((color) => color.tex)}</span>
-                  </li>
-                  <li>
-                    Тариф
-                    <span class="value">{item.map((pay) => pay.pays)}</span>
+                    <span class="value">{item.tex}</span>
                   </li>
                 </div>
-              ) : null}
-              {item.length > 0 ? (
+              )}
+              {pice && (
                 <div>
                   <li>
-                    Полный бак<span class="value">{active ? "Нет" : "Да"}</span>
-                  </li>
-                  <li>
-                    Детское кресло
-                    <span class="value">{activ ? "Да" : "Нет"}</span>
-                  </li>
-                  <li>
-                    Правый руль
-                    <span class="value">{actives ? "Да" : "Нет"}</span>
+                    Тариф
+                    <span class="value">{pice.pays}</span>
                   </li>
                 </div>
-              ) : null}
+              )}
+              <li>
+                Полный бак<span class="value">{active ? "Да" : "Нет"}</span>
+              </li>
+              <li>
+                Детское кресло
+                <span class="value">{activ ? "Да" : "Нет"}</span>
+              </li>
+              <li>
+                Правый руль
+                <span class="value">{actives ? "Да" : "Нет"}</span>
+              </li>
             </ul>
           </div>
           <p>
-            <strong> Цена:</strong> {items.map((car) => car.price)}
+            <strong> Цена:</strong>{" "}
+            {TotalPay
+              ? TotalPay + TotalOne + TotalTwo + TotalThree
+              : items.price}{" "}
+            ₽
           </p>
         </div>
         <Model model={model} setModel={setModel} />

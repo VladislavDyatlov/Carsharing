@@ -6,23 +6,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.2s all;
+    transition: 1s all;
     &:hover {
       border: 1px solid rgb(88, 117, 88);
       color: rgb(34, 225, 34);
-      transition: 0.5s all;
+      transition: 1s all;
     }
   
     &:active {
       .language__a { 
         color: rgb(68, 168, 68);
-        transition: 0.2s all;
+        transition: 1s all;
       }
     }
     &__a {
       color: rgb(71, 168, 71);
       text-decoration: none;
-      transition: 0.2s all;
+      transition: 1s all;
     }
     &--navigation {
       margin: 28px;

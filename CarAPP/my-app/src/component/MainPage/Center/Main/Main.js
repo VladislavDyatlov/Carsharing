@@ -12,7 +12,7 @@ function Main({ eng }) {
         </h1>
         <p className="main__p3">Поминутная аренда авто твоего города</p>
       </div>
-      <Link to="/booking" className="main__button order__total-button">
+      <Link to="/booking/location" className="main__button order__total-button">
         Забронировать
       </Link>
     </div>

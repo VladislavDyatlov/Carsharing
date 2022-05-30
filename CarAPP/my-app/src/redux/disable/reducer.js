@@ -6,16 +6,17 @@ const cartSlice = createSlice({
     itemsInDisable: null,
     itemsInDisabls: null,
     itemsInDisables: null,
+    itemsInDisab: null,
   },
   reducers: {
     setItemInDisable: (state, action) => {
       state.itemsInDisable = action.payload;
     },
-    setItemInDisabls: (state, action) => {
+    setItemInDisabls: (state, action) => { 
       state.itemsInDisabls = action.payload;
-    },
+    }, 
     setItemInDisab: (state, action) => {
-      state.itemsInDisable = action.payload;
+      state.itemsInDisab = action.payload;
     },
     setItemInDisables: (state, action) => {
       state.itemsInDisables = action.payload;

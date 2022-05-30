@@ -12,6 +12,48 @@
   }
 }
 
+input[type='radio'],
+label {
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid rgb(7, 158, 20);
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(19, 175, 5);
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+
 .Options{
   margin-top: 35px;
 }
@@ -24,14 +66,19 @@
     }
 
     &__list{
-      padding: 0;
+      padding: 0px;
     }
 
     &__item {
       display: flex;
       align-items: center; 
+      vertical-align: 5px;
+      padding: 0px;
       &:not(:last-child) {
         margin-bottom: 8px;
+      }
+      input[type='checkbox']{
+        margin-top: 5px;
       }
     }
   }
@@ -46,6 +93,12 @@
     }
     &__heading {
       margin-bottom: 16px;
+    }
+    &__form{
+      display: flex;
+    } 
+    &__forms{
+      margin-left: 10px;
     }
     &__input {
       outline: none;
@@ -71,16 +124,12 @@
     }
     &__list {
       display: flex;
-      padding: 0;
     }
     &__item {
-      margin: 0;
-      li::marker {
-        font-size: 5rem;
-      }
+      vertical-align: 5px;
+      margin-left: 5px;
       font-size: 17px;
       color: rgb(2, 2, 2);
-      margin-left: 22px;
       &:hover{
         color: rgb(28, 106, 28);
         transition: 1s;
@@ -96,12 +145,14 @@
     }
 
     &__list{
-      padding:10px;
+      padding:0px;
+      vertical-align: 5px;
     }
 
     &__item{
       cursor: pointer;
       font-size: 17px;
+      vertical-align: 5px;
       color: rgb(2, 2, 2);
       &:hover{
         color: rgb(28, 106, 28);
